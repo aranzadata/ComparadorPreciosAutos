@@ -13,7 +13,7 @@ car_data = pd.read_csv('vehicles_us.csv')
 car_data['date_posted'] = pd.to_datetime(car_data['date_posted'], format='%Y-%m-%d')
 
 #separa la columna 'model' en columnas 'manufacturer' y 'model'
-car_data[['manufacturer', 'model']] = car_data['model'].str.split(' ', 1, expand=True)
+car_data[['manufacturer', 'model']] = car_data['model'].str.split(' ', n=1, expand=True)
 car_data['model'] = car_data['model'].str.strip()
 
 #diccionario para los nombres de las columnas en español
